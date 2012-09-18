@@ -1,4 +1,4 @@
-application: pxg-blog2
+application: pxg-blog
 version: 1
 runtime: python27
 api_version: 1
