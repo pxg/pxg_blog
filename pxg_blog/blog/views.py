@@ -1,5 +1,6 @@
 from django.shortcuts import render_to_response
-from django.template import RequestContext  # TODO: is this needed?
+from django.template import RequestContext
+from django.shortcuts import get_object_or_404
 from blog.models import Article
 
 
@@ -10,7 +11,6 @@ def home(request):
 
 
 def article(request, article_id):
-    #throw 404 if not found
-    article = Article.objects.order_by('created_at')[0]
+    article = get_object_or_404(Article, pk=article_id)
     return render_to_response("blog/article.html", {"article": article},
                               context_instance=RequestContext(request))
