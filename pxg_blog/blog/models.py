@@ -12,8 +12,11 @@ import re
 
 class Article(models.Model):
     title = models.CharField(max_length=200)
-    body = models.CharField(max_length=5000)
+    body = models.TextField(max_length=5000)
 
     # System fields
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __unicode__(self):
+        return self.title

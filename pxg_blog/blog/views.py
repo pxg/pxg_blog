@@ -1,9 +1,11 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext  # TODO: is this needed?
+from blog.models import Article
 
 
 def home(request):
-    return render_to_response("blog/home.html", {},
+    articles = Article.objects.order_by('created_at')
+    return render_to_response("blog/home.html", {"articles": articles},
                               context_instance=RequestContext(request))
 
 
