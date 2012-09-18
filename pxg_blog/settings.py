@@ -16,9 +16,7 @@ SECRET_KEY = '=r-$b*8hglm+858&9t043hlm6-&6-3d3vfc4((7yd0dbrakhvi'
 STATIC_URL = '/static/'
 
 STATICFILES_FINDERS = (
-#    'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 INSTALLED_APPS = (
@@ -30,11 +28,11 @@ INSTALLED_APPS = (
     'autoload',
     'dbindexer',
     'django.contrib.admin',
+    'django.contrib.staticfiles',
+    'blog',
 
     # djangoappengine should come last, so it can override a few manage.py commands
     'djangoappengine',
-    'django.contrib.staticfiles',
-    'blog',
 )
 
 MIDDLEWARE_CLASSES = (
