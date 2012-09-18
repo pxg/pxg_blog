@@ -12,20 +12,6 @@ AUTOLOAD_SITECONF = 'indexes'
 
 SECRET_KEY = '=r-$b*8hglm+858&9t043hlm6-&6-3d3vfc4((7yd0dbrakhvi'
 
-STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__) + '/..'), 'static')
-
-STATIC_URL = '/static/'
-
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-)
-
-# STATIC_DIRS = (
-#     os.path.join(os.path.abspath(os.path.dirname(__file__) + '/..'), 'static'),
-# )
-
 INSTALLED_APPS = (
 #    'django.contrib.admin',
     'django.contrib.contenttypes',
@@ -42,6 +28,8 @@ INSTALLED_APPS = (
     'djangoappengine',
 )
 
+STATIC_URL = '/static/'
+
 MIDDLEWARE_CLASSES = (
     # This loads the index definitions, so it has to come first
     'autoload.middleware.AutoloadMiddleware',
@@ -55,6 +43,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.request',
     'django.core.context_processors.media',
+    'django.core.context_processors.static',
 )
 
 # This test runner captures stdout and associates tracebacks with their
