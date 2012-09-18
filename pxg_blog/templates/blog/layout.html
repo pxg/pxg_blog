@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Pete X. Graham - Blog</title>
+        <meta name="description" content="Pete X. Graham: Blog">
+        <meta name="keywords" content="PXG Blog">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+
+        <link href="{{ STATIC_URL }}/blog/global.css" media="all" type="text/css" rel="stylesheet" />
+
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+        <script src="{{STATIC_URL}}questions/js/libs/modernizr-2.5.3.min.js"></script>
+
+    </head>
+
+    <body id="home">
+        <div id="header">
+            <h1>PXG Blog</span></h1>
+        </div>
+
+        <div id="content">
+
+        {% block content %}
+        {% endblock %}
+
+        </div>
+
+    </body>
+</html>

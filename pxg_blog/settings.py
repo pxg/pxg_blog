@@ -12,6 +12,20 @@ AUTOLOAD_SITECONF = 'indexes'
 
 SECRET_KEY = '=r-$b*8hglm+858&9t043hlm6-&6-3d3vfc4((7yd0dbrakhvi'
 
+STATIC_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__) + '/..'), 'static')
+
+STATIC_URL = '/static/'
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
+
+# STATIC_DIRS = (
+#     os.path.join(os.path.abspath(os.path.dirname(__file__) + '/..'), 'static'),
+# )
+
 INSTALLED_APPS = (
 #    'django.contrib.admin',
     'django.contrib.contenttypes',
@@ -20,11 +34,12 @@ INSTALLED_APPS = (
     'djangotoolbox',
     'autoload',
     'dbindexer',
+    'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'blog',
 
     # djangoappengine should come last, so it can override a few manage.py commands
     'djangoappengine',
-    'blog',
-    'django.contrib.admin',
 )
 
 MIDDLEWARE_CLASSES = (

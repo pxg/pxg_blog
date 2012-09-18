@@ -1,15 +1,12 @@
-<!--
-TODO: read in style sheet here
-TODO: add header and footer (take from petegraham.co.uk)
--->
+{% extends 'blog/layout.html' %}
 
-<h1>PXG Blog</h1>
+{% block content %}
 
 {% for article in articles %}
-<h2><a href="">{{ article.title }}</a></h2>
+<h2><a href="{% url blog.views.article article.id %}">{{ article.title }}</a></h2>
 
 <p>{{ article.body }}</p>
 
 {% endfor %}
 
-<p>footer</p>
+{% endblock %}
