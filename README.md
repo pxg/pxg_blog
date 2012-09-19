@@ -1,14 +1,16 @@
-pxg_blog
-========
+# PXG GAE Django Blog
+===
 
-# reuse template for output of blog post
+## Extra Functionality
 
-# slug
+* slug
 
-# WYSIWYG
+* WYSIWYG
 
-# Fix max-width
+* Image upload
 
-# Image upload
+* Tagging
 
-# Pagnation
+* Fix max-width
+
+* Pagnation
