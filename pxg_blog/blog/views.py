@@ -5,7 +5,7 @@ from blog.models import Article
 
 
 def home(request):
-    articles = Article.objects.order_by('created_at')
+    articles = Article.objects.order_by('-created_at')
     return render_to_response("blog/home.html", {"articles": articles},
                               context_instance=RequestContext(request))
 
